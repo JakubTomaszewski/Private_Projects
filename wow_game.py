@@ -20,7 +20,7 @@ def printout(to_guess, letters):
 #Importing file - i'll add this option in the future
 
 #dict letters:[words] - will add more word sets later
-d = {'REPISZP':['PSI', 'PIEPRZ', 'PRZEPIS', 'SER', 'PIES', 'PERS', 'RZEP'], 'UABEKLT': ['BLAT', 'BUTLA', 'BUTELKA', 'BELKA', 'KLUB', 'LUBA', 'BALET']}
+d = {'REPISZP':['PISZ', 'PIEPRZ', 'PRZEPIS', 'SER', 'PIES', 'PERS', 'RZEP'], 'UABEKLT': ['BLAT', 'BUTLA', 'BUTELKA', 'BELKA', 'KLUB', 'LUBA', 'BALET']}
 
 letters = random.choice(list(d.keys()))
 words = d[letters]
@@ -30,7 +30,7 @@ to_guess = [''.join('[ ]' for letter in word) for word in words]
 while words_game_end: #continue while the list is not empty
     printout(to_guess, letters)
     print('Your word:', end=' ')
-    guess = input().upper()
+    guess = input().upper().strip()
     if guess in words: #checking if input word is in words to guess
         for i in range(len(guess)):
             to_guess[words.index(guess)] = to_guess[words.index(guess)].replace(' ', words[words.index(guess)][i], 1) #replacing every space with every letter of the guessed word
