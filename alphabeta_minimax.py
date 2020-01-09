@@ -1,4 +1,4 @@
-'''minimax algorythm, also known as alpha beta"
+'''minimax algorythm, also known as alpha beta'''
 
 def minimax(positions, depth, alpha, beta, PlayerMax):
     if depth == 0:
